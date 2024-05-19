@@ -7,9 +7,9 @@ def load_model():
   return model
 model=load_model()
 st.write("""
-# Weather Clssfication Group 2"""
+# Weather Classfication Group 2 (ADSUARA, CAPALUNGAN)"""
 )
-file=st.file_uploader("Choose any photo from computer",type=["jpg"])
+file=st.file_uploader("Upload or Select a Sky Picture: Choose any picture of the sky from your device gallery",type=["jpg"])
 
 import cv2
 from PIL import Image,ImageOps
@@ -22,7 +22,7 @@ def import_and_predict(image_data,model):
     prediction=model.predict(img_reshape)
     return prediction
 if file is None:
-    st.text("Please upload an image file")
+    st.text("Please upload an image file (JPG)")
 else:
     image=Image.open(file)
     st.image(image,use_column_width=True)
